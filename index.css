@@ -54,7 +54,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  background: #a100004d;
+  background: var(--body-background-color);
 }
 
 p,
@@ -115,7 +115,7 @@ body li {
 
 .bottom_banner .content {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -123,7 +123,7 @@ body li {
   object-fit: cover;
   width: 55rem;
   height: 30rem;
-  margin-bottom: 0.20rem;
+  margin-bottom: 0.2rem;
 }
 
 /**********************************************************/
@@ -135,7 +135,6 @@ body li {
     display: contents;
     margin: 0;
     padding: 0;
-    background-color: red;
   }
 
   .top-banner img {
@@ -152,7 +151,8 @@ body li {
   }
 
   .bottom_banner .content {
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
     gap: 1rem;
+    padding: 0rem 1rem 1rem 1rem;
   }
 }
