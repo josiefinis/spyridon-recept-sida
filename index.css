@@ -1,4 +1,6 @@
+/**********************************************************/
 /* Minimal Reset */
+/**********************************************************/
 /* makes sizing simpler */
 *,
 *::before,
@@ -36,7 +38,16 @@ video {
   max-width: 100%;
 }
 
-/********************/
+/**********************************************************/
+/* Core Style */
+/**********************************************************/
+* {
+  font-family: "DM Sans", sans-serif;
+
+  --body-background-color: #a100004d;
+  --title-color: #a10000;
+  --summary-background-color: #ebebeb;
+}
 
 body {
   display: flex;
@@ -45,9 +56,6 @@ body {
 
   padding: 1rem;
   background: #a100004d;
-
-  min-width: 100vh;
-  min-height: 100vh;
 }
 
 body *:not(img, .top-banner, li, .topic) {
@@ -56,7 +64,7 @@ body *:not(img, .top-banner, li, .topic) {
 
 body ul[role="list"],
 body ol[role="list"] {
-  margin-left: 2rem;
+  margin-left: 2.2rem;
   padding: 0;
 }
 
@@ -64,19 +72,23 @@ body li {
   margin-top: 1.75rem;
 }
 
-.title {
-  font-size: 3rem;
-  color: red;
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--title-color);
 }
 
 .topic .heading {
   font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
 }
 
 .summary {
-  background-color: gray;
+  background-color: var(--summary-background-color);
   margin-top: 2rem;
-  padding: 0.5rem;
+
+  padding: 1.1rem 1rem;
 }
 
 .content {
@@ -102,8 +114,8 @@ body li {
   margin-top: 1rem;
 }
 
-.bottom_banner .title {
-  margin-bottom: 2rem;
+.bottom_banner .heading {
+  margin-bottom: 2.5rem;
   color: black;
 }
 
@@ -120,48 +132,6 @@ body li {
   margin-bottom: 1.5rem;
 }
 
-/* li {
-  padding-top: 15px;
-} */
-
-/* Header Style*/
-/* header {
-  padding: 20px 50px 0 50px;
-}
-
-header h1 {
-  color: #a10000;
-}
-
-header h1 + p {
-  background-color: #ebebeb;
-  padding: 16px;
-}
-
-/* Main Body Style*/
-/* article {
-  padding: 10px 50px 0 50px;
-} */
-
-/*Footer Style*/
-/* footer {
-  padding: 20px 50px 0 50px;
-  margin-bottom: 50px;
-}
-
-footer div {
-  display: flex;
-  flex-direction: row;
-}
-
-footer .content {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 24px;
-}
-
-footer .content img {
-  object-fit: cover;
-  width: 580px;
-  height: 467px;
-} */
+/**********************************************************/
+/* Media Query*/
+/**********************************************************/
