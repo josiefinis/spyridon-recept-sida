@@ -1,14 +1,59 @@
-/*Ultra-tiny reset*/
-* {
-  font-family: "Open Sans", sans-serif;
+/* Minimal Reset */
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* dark mode user-agent-styles */
+
+html {
+  color-scheme: dark light;
+}
+
+/* min body height */
+
+body {
+  min-height: 100vh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/********************/
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+  background: #a100004d;
+
+  min-width: 100vh;
+  min-height: 100vh;
 }
 
 /*Custom Classes*/
 .content {
   background: #fcfcfc;
-
-  max-width: 1280px;
+  border-radius: 1ch;
 }
 
 .top-banner {
@@ -23,26 +68,12 @@
   border-color: #fcfcfc;
 }
 
-li {
+/* li {
   padding-top: 15px;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 0px 50px 0 50px;
-  background: #a100004d;
-
-  min-width: 100vh;
-  min-height: 100vh;
-
-  margin: 0;
-}
+} */
 
 /* Header Style*/
-header {
+/* header {
   padding: 20px 50px 0 50px;
 }
 
@@ -56,12 +87,12 @@ header h1 + p {
 }
 
 /* Main Body Style*/
-section {
+/* article {
   padding: 10px 50px 0 50px;
-}
+} */
 
 /*Footer Style*/
-footer {
+/* footer {
   padding: 20px 50px 0 50px;
   margin-bottom: 50px;
 }
@@ -81,4 +112,4 @@ footer .content img {
   object-fit: cover;
   width: 580px;
   height: 467px;
-}
+} */
