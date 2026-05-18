@@ -19,9 +19,9 @@
 
 /* dark mode user-agent-styles */
 
-html {
+/* html {
   color-scheme: dark light;
-}
+} */
 
 /* min body height */
 
@@ -45,42 +45,41 @@ video {
   font-family: "DM Sans", sans-serif;
 
   --body-background-color: #a100004d;
-  --title-color: #a10000;
   --summary-background-color: #ebebeb;
+  --title-color: #a10000;
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 1rem;
   background: #a100004d;
 }
 
-body *:not(img, .top-banner, li, .topic) {
+p,
+span,
+.content {
   margin: 2rem 1rem 1rem 1rem;
 }
 
 body ul[role="list"],
 body ol[role="list"] {
   margin-left: 2.2rem;
-  padding: 0;
 }
 
 body li {
-  margin-top: 1.75rem;
+  margin-top: 1rem;
 }
 
 .heading {
-  font-size: 2.5rem;
+  margin: 2rem 1rem 1rem 1rem;
+  font-size: 2rem;
   font-weight: bold;
   color: var(--title-color);
 }
 
 .topic .heading {
-  font-size: 2.5rem;
-  font-weight: bold;
   color: black;
 }
 
@@ -110,12 +109,7 @@ body li {
   object-fit: cover;
 }
 
-.bottom_banner {
-  margin-top: 1rem;
-}
-
 .bottom_banner .heading {
-  margin-bottom: 2.5rem;
   color: black;
 }
 
@@ -127,11 +121,38 @@ body li {
 
 .bottom_banner img {
   object-fit: cover;
-  width: 50rem;
+  width: 55rem;
   height: 30rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.20rem;
 }
 
 /**********************************************************/
 /* Media Query*/
 /**********************************************************/
+
+@media screen and (max-width: 440px) {
+  body {
+    display: contents;
+    margin: 0;
+    padding: 0;
+    background-color: red;
+  }
+
+  .top-banner img {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .content {
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bottom_banner .content {
+    grid-template-rows: auto auto auto;
+    gap: 1rem;
+  }
+}
