@@ -20,7 +20,7 @@
 /* dark mode user-agent-styles */
 
 /* html {
-  color-scheme: dark light;
+  color-scheme: light dark;
 } */
 
 /* min body height */
@@ -39,91 +39,142 @@ video {
 }
 
 /**********************************************************/
+/*                     Variables                          */
+/**********************************************************/
+
+:root {
+  /* Background Colors*/
+  --body-bg-clr: #a100004d;
+  --summary-bg-clr: light-dark(#ebebeb, #6c6c6c);
+  --content-bg-clr: light-dark(#fcfcfc, #262626);
+
+  /* Heading */
+  --h-main-clr: light-dark(#a10000, #e12929);
+  --h-main-size: 2rem;
+  --h-main-bold: bold;
+
+  --h-clr: light-dark(black, white);
+  --h-size: var(--h-main-size);
+  --h-bold: var(--h-main-bold);
+
+  --summary-margin-top: 2rem;
+  --summary-padding: 1.1rem 1rem;
+
+  /* Font Family*/
+  --ff-main: "DM Sans", sans-serif;
+  --ff: var(--ff-main);
+
+  /* Top Banner */
+  --top-banner-height: 30rem;
+
+  /* Body */
+  --content-margin: 2rem 1rem 1rem 1rem;
+  --content-border-radius: 1ch;
+  --content-padding: 5rem;
+
+  /* Page Footer*/
+  --example-imgs-grid-gap: 1rem;
+
+  /* Collections */
+  --line-height: 2rem;
+  --line-margin: 0 2rem;
+
+  /* Text */
+  --text-margin: 5rem 1.5rem;
+}
+
+/**********************************************************/
 /*                     Core Style                         */
 /**********************************************************/
 * {
-  font-family: "DM Sans", sans-serif;
-
-  --body-background-color: #a100004d;
-  --summary-background-color: #ebebeb;
-  --title-color: #a10000;
+  font-family: var(--ff);
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  background: var(--body-background-color);
-}
-
-p,
-span,
-.content {
-  margin: 2rem 1rem 1rem 1rem;
-}
-
-body ul[role="list"],
-body ol[role="list"] {
-  margin-left: 2.2rem;
-}
-
-body li {
-  margin-top: 1rem;
-}
-
-.heading {
-  margin: 2rem 1rem 1rem 1rem;
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--title-color);
-}
-
-.topic .heading {
-  color: black;
-}
-
-.summary {
-  background-color: var(--summary-background-color);
-  margin-top: 2rem;
-
-  padding: 1.1rem 1rem;
+  padding: var(--content-padding);
+  background: var(--body-bg-clr);
 }
 
 .content {
-  background: #fcfcfc;
-  border-radius: 1ch;
+  background: var(--content-bg-clr);
+  border-radius: var(--content-border-radius);
+}
+
+.page-header {
+  margin: var(--content-margin);
+
+  .heading {
+    font-size: var(--h-main-size);
+    font-weight: var(--h-main-bold);
+    font-family: var(--ff-main);
+    color: var(--h-main-clr);
+  }
+
+  .summary {
+    background-color: var(--summary-bg-clr);
+    margin-top: var(--summary-margin-top);
+    padding: var(--summary-padding);
+  }
+}
+
+.page-topic {
+  .heading {
+    margin: var(--content-margin);
+    font-size: var(--h-main-size);
+    font-weight: var(--h-main-bold);
+    color: var(--f-clr-main);
+  }
+
+  ul[role="list"],
+  ol[role="list"] {
+    line-height: var(--line-height);
+    margin: var(--line-margin);
+  }
+
+  span {
+    margin: var(--text-margin);
+    line-height: var(--line-height);
+  }
 }
 
 .top-banner {
   width: auto;
-  height: 30rem;
+  height: var(--top-banner-height);
+
+  img {
+    border-top-left-radius: var(--content-border-radius);
+    border-top-right-radius: var(--content-border-radius);
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
-.top-banner img {
-  border-top-left-radius: 1ch;
-  border-top-right-radius: 1ch;
+.page-footer {
+  margin: var(--content-margin);
 
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  .heading {
+    font-size: var(--h-main-size);
+    font-weight: var(--h-main-bold);
+    color: var(--h-clr);
+  }
 
-.bottom_banner .heading {
-  color: black;
-}
+  .examples {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--example-imgs-grid-gap);
+  }
 
-.bottom_banner .content {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.bottom_banner img {
-  object-fit: cover;
-  width: 55rem;
-  height: 30rem;
-  margin-bottom: 0.2rem;
+  img {
+    object-fit: cover;
+    width: 55rem;
+    height: 30rem;
+    margin-bottom: 0.2rem;
+  }
 }
 
 /**********************************************************/
@@ -150,7 +201,7 @@ body li {
     padding: 0;
   }
 
-  .bottom_banner .content {
+  .page-footer .examples {
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 0rem 1rem 1rem 1rem;
