@@ -19,9 +19,9 @@
 
 /* dark mode user-agent-styles */
 
-/* html {
+/*html {
   color-scheme: light dark;
-} */
+}*/
 
 /* min body height */
 
@@ -69,8 +69,9 @@ video {
 
   /* Body */
   --content-margin: 2rem 1rem 1rem 1rem;
-  --content-border-radius: 1ch;
-  --content-padding: 5rem;
+  --content-border-radius: 0 0 1ch 1ch;
+  --content-padding: 0rem 5rem 5rem 5rem;
+  --content-max-width: 60rem;
 
   /* Page Footer*/
   --example-imgs-grid-gap: 1rem;
@@ -82,8 +83,12 @@ video {
   /* Text */
   --text-margin: 5rem 1.5rem;
 
-  /*Main Content Size*/
-  --content-max-width: 60rem;
+  /* Example Images*/
+  --example-img-height: 20rem;
+  --example-img-width: 55rem;
+  --example-img-margin-bottom: 0.2rem;
+  --example-img-padding-top: 1rem;
+
 }
 
 /**********************************************************/
@@ -153,7 +158,7 @@ body {
     border-top-right-radius: var(--content-border-radius);
 
     width: 100%;
-    height: 100%;
+    height: var(--top-banner-height);
     object-fit: cover;
   }
 }
@@ -175,9 +180,10 @@ body {
 
   img {
     object-fit: cover;
-    width: 55rem;
-    height: 30rem;
-    margin-bottom: 0.2rem;
+    width: var(--example-img-width);
+    height: var(--example-img-height);
+    margin-bottom: var(--example-img-margin-bottom);
+    padding-top: var(--example-img-padding-top);
   }
 }
 
@@ -208,6 +214,6 @@ body {
   .page-footer .examples {
     grid-template-columns: 1fr;
     gap: 1rem;
-    padding: 0rem 1rem 1rem 1rem;
+    padding: 1rem 1rem 1rem 0rem;
   }
 }
