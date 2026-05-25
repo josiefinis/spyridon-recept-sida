@@ -43,52 +43,6 @@ video {
 /**********************************************************/
 
 :root {
-  /* Background Colors*/
-  /* --body-bg-clr: #a100004d;
-  --summary-bg-clr: light-dark(#ebebeb, #6c6c6c);
-  --content-bg-clr: light-dark(#fcfcfc, #262626); */
-
-  /* Heading */
-  /* --h-main-clr: light-dark(#a10000, #e12929);
-  --h-main-size: 2rem;
-  --h-main-bold: bold;
-
-  --h-clr: light-dark(black, white);
-  --h-size: var(--h-main-size);
-  --h-bold: var(--h-main-bold);
-
-  --summary-margin-top: 2rem;
-  --summary-padding: 1.1rem 1rem; */
-
-  /* Font Family*/
-  /* --ff-main: "DM Sans", sans-serif;
-  --ff: var(--ff-main); */
-
-  /* Top Banner */
-  /* --top-banner-height: 30rem; */
-
-  /* Body */
-  /* --content-margin: 2rem 1rem 1rem 1rem;
-  --content-border-radius: 0 0 1ch 1ch;
-  --content-padding: 0rem 5rem 5rem 5rem;
-  --content-max-width: 60rem; */
-
-  /* Page Footer*/
-  /* --example-imgs-grid-gap: 1rem; */
-
-  /* Collections */
-  /* --line-height: 2rem;
-  --line-margin: 0 2rem; */
-
-  /* Text */
-  /* --text-margin: 5rem 1.5rem; */
-
-  /* Example Images*/
-  /* --example-img-height: 20rem;
-  --example-img-width: 55rem;
-  --example-img-margin-bottom: 0.2rem;
-  --example-img-padding-top: 1rem; */
-
   /* Font Family */
   --ff-default: "DM Sans", sans-serif;
   --ff-heading: var(--ff-default);
@@ -113,29 +67,30 @@ video {
   --spacing-xl: 2rem;
 
   /* Border Round */
-  --border-radius-xs: 0.25rem;
-  --border-radius-sm: 0.5rem;
-  --border-radius-md: 1rem;
-  --border-radius-lg: 1.5rem;
-  --border-radius-xl: 2rem;
+  --border-rounded-xs: 0.25rem;
+  --border-rounded-sm: 0.5rem;
+  --border-rounded-md: 1rem;
+  --border-rounded-lg: 1.5rem;
+  --border-rounded-xl: 2rem;
 
   /* General Units */
   --gu-full: 100%;
 
   /* Background Colors */
-  --clr-bg-page: yellow;
-  --clr-bg-content: white;
-  --clr-bg-summary: gray;
+  --clr-bg-body: yellow;
+  --clr-bg-page: white;
+  --clr-bg-callout: gray;
 
-  /* Colors */
+  /* Font Colors */
   --clr-f-heading: red;
+  --clr-f-strong: red;
 
   /* Page */
-  --page-padding: 0 calc(100rem - var(--content-width));
+  --page-padding: inherit inherit;
 
   /* Content */
-  --content-width: 75rem;
-  --content-max-width: 75rem;
+  --content-max-width: 50rem;
+  --content-flex-grow: calc(100rem / var(var(--content-max-width)));
   --content-padding: 0 1rem;
   --content-preview-height: 15rem;
 
@@ -151,8 +106,30 @@ video {
 
 /**********************************************************/
 /*                     Global Settings                    */
+/*                     Global Settings                    */
 /**********************************************************/
 * {
+  font-family: var(--ff-default);
+  line-height: var(--lh-default);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-bolder);
+  font-size: var(--fs-subheading);
+
+  line-height: var(--lh-heading);
+  padding-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: var(--fs-heading);
+}
+
+strong {
+  font-weight: var(--fw-bold);
   font-family: var(--ff-default);
   line-height: var(--lh-default);
 }
@@ -182,8 +159,7 @@ body {
   align-items: center;
 
   padding: var(--page-padding);
-
-  background-color: var(--clr-bg-page);
+  background-color: var(--clr-bg-body);
 }
 
 ol[role="list"],
@@ -196,9 +172,13 @@ ul[role="list"] {
 /**********************************************************/
 
 .page {
+  flex-grow: var(--content-flex-grow);
+
+  display: block;
+  margin-block-end: var(--spacing-md);
+
   max-width: var(--content-max-width);
-  background-color: var(--clr-bg-content);
-  margin-bottom: var(--spacing-md);
+  background-color: var(--clr-bg-page);
 }
 
 .page > *:not(.page-banner) {
@@ -219,9 +199,13 @@ ul[role="list"] {
   margin-top: var(--spacing-lg);
   color: var(--clr-f-heading);
 }
+.page-header__heading {
+  margin-top: var(--spacing-lg);
+  color: var(--clr-f-heading);
+}
 
 .page-header__summary {
-  background-color: var(--clr-bg-summary);
+  background-color: var(--clr-bg-callout);
 
   padding-block-start: var(--content-summary-spacing);
   padding-block-end: var(--content-summary-spacing);
@@ -229,7 +213,7 @@ ul[role="list"] {
 
   margin: var(--spacing-lg) auto;
 
-  border-radius: var(--border-radius-xs);
+  border-radius: var(--border-rounded-xs);
 }
 
 .page-section {
@@ -250,7 +234,10 @@ ul[role="list"] {
   gap: var(--content-examples-clt-gap);
 
   img {
+    display: inline-block;
     object-fit: cover;
+    width: 100%;
+    height: var(--content-examples-clt-height);
     width: 100%;
     height: var(--content-examples-clt-height);
   }
@@ -274,6 +261,7 @@ ul[role="list"] {
     padding: 0;
   }
 
+  .wrapper {
   .wrapper {
     border-radius: 0;
     margin: 0;
