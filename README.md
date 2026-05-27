@@ -4,7 +4,7 @@ This is the cooking-page assignement for Lexicon where I use basic HTML and CSS 
 
 The website in question is built with accesibility in mind, using Semantic HTML tags. The site also uses a responsive design, which means that it can be viewed on any device or screen size.
 
-# Week 3
+# Week 3 - Home Page & Navigation Bar
 
 This page has received some changes for the current week, where:
 
