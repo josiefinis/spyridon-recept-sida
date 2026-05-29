@@ -1,0 +1,191 @@
+@import "global-props.css";
+@import "theme.css";
+@import "navigation.css";
+
+/**********************************************************/
+/*                     Variables                          */
+/**********************************************************/
+
+:root {
+  /* Background Colors */
+  --clr-bg-body: var(--background-400);
+  --clr-bg-page: var(--background-100);
+  --clr-bg-callout: var(--background-200);
+
+  /* Content */
+  --content-max-width: 60rem;
+  --content-flex-grow: 1;
+  --content-padding: 0 1rem;
+  --content-preview-height: 20rem;
+
+  --content-summary-indent: 1rem;
+  --content-summary-spacing: 1rem;
+
+  --content-examples-clt-gap: 0.5rem;
+  --content-examples-clt-height: 20rem;
+
+  --content-shadow: 2px solid var(--background-300);
+}
+
+/**********************************************************/
+/*                     Global Settings                    */
+/**********************************************************/
+* {
+  font-family: var(--ff-default);
+  line-height: var(--lh-default);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-bolder);
+  font-size: var(--fs-subheading);
+
+  line-height: var(--lh-heading);
+  padding-bottom: var(--spacing-sm);
+}
+
+strong {
+  font-weight: var(--fw-bold);
+  color: var(--clr-f-strong);
+}
+
+body {
+  background-color: var(--clr-bg-body);
+}
+
+ol[role="list"],
+ul[role="list"] {
+  line-height: var(--lh-default);
+  padding-inline-start: var(--ls-indentation);
+}
+
+a {
+  color: var(--clr-f-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--clr-f-link--hovered);
+  text-decoration: underline;
+}
+
+a:focus {
+  color: var(--clr-f-link--focused);
+  text-decoration: underline;
+}
+
+/**********************************************************/
+/*                     Blocks                             */
+/**********************************************************/
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  flex-grow: var(--content-flex-grow);
+
+  display: block;
+  margin-block-end: var(--spacing-md);
+
+  max-width: var(--content-max-width);
+  background-color: var(--clr-bg-page);
+}
+
+.content > *:not(.content-banner) {
+  padding: var(--content-padding);
+}
+
+.content-banner {
+  height: var(--content-preview-height);
+
+  img {
+    object-fit: cover;
+    width: var(--size-full);
+    height: var(--content-preview-height);
+  }
+}
+
+.content-heading {
+  margin-top: var(--spacing-lg);
+  color: var(--clr-f-heading);
+}
+
+.content-summary {
+  background-color: var(--clr-bg-callout);
+
+  padding-block-start: var(--content-summary-spacing);
+  padding-block-end: var(--content-summary-spacing);
+  padding-inline-start: var(--content-summary-indent);
+
+  margin: var(--spacing-lg) auto;
+
+  border-radius: var(--border-rounded-xs);
+}
+
+.content-section {
+  padding-block: var(--spacing-md);
+  border-block-end: var(--content-shadow);
+}
+
+.content-section__heading {
+  padding-block-end: var(--spacing-xs);
+}
+
+.content-section--examples {
+  padding-block: var(--spacing-md);
+}
+
+.content-section__collection {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--content-examples-clt-gap);
+  padding-block-start: var(--spacing-xs);
+
+  img {
+    display: inline-block;
+    object-fit: cover;
+    width: 100%;
+    height: var(--content-examples-clt-height);
+  }
+}
+/**********************************************************/
+/*                     Media Query                        */
+/**********************************************************/
+
+@media screen and (max-width: 440px) {
+  body {
+    background-color: white;
+  }
+
+  .wrapper {
+    display: block;
+  }
+
+  .content {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .top-bar {
+    display: inline-flex;
+  }
+
+  .top-bar__logo {
+    flex-shrink: 3;
+  }
+
+  .top-bar__login {
+    padding-inline: 0.75rem 0;
+  }
+
+  .content-section__collection {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem 1rem 1rem 0rem;
+  }
+}

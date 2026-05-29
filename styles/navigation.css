@@ -1,0 +1,68 @@
+@import "global-props.css";
+@import "theme.css";
+
+/**********************************************************/
+/*                     Variables                          */
+/**********************************************************/
+
+:root {
+  /* Background Colors */
+  --clr-bg-top-bar: var(--background-800);
+
+  /* Top Bar */
+  --tp-login-padding-inline: auto auto;
+}
+
+/**********************************************************/
+/*                     Blocks                             */
+/**********************************************************/
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-block: var(--spacing-md);
+  padding-inline: var(--spacing-sm);
+
+  background-color: var(--clr-bg-top-bar);
+
+  font-family: var(--ff-default);
+  line-height: var(--lh-default);
+
+  * {
+    color: var(--clr-f-tp);
+  }
+}
+
+.top-bar a {
+  font-size: var(--fs-link);
+}
+
+.top-bar a:hover {
+  color: var(--clr-f-tp);
+}
+
+.top-bar a:focus {
+  color: var(--primary-300);
+}
+
+.top-bar__logo {
+  font-weight: var(--fw-bolder);
+  font-size: var(--fs-subheading);
+
+  flex: 1;
+}
+
+.top-bar__navigation {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-md);
+
+  flex-shrink: 0;
+}
+
+.top-bar__login {
+  flex: 1;
+  text-align: end;
+}
