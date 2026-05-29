@@ -112,7 +112,7 @@ a:focus {
   height: var(--h-page-intro);
   width: 100%;
 
-  filter: brightness(25%);
+  filter: brightness(10%);
 }
 
 .intro-header {
