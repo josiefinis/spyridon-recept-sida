@@ -24,7 +24,7 @@
   --content-examples-clt-gap: 0.5rem;
   --content-examples-clt-height: 20rem;
 
-  --content-shadow: 2px solid var(--background-300);
+  --content-shadow: 0.2ch solid var(--background-300);
 }
 
 /**********************************************************/

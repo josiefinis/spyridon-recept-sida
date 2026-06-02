@@ -7,10 +7,13 @@
 
 :root {
   /* Background Colors */
-  --clr-bg-top-bar: var(--background-800);
+  --clr-bg-top-bar: var(--background-500);
+  --clr-bd-top-bar: var(--background-500);
 
   /* Top Bar */
   --tp-login-padding-inline: auto auto;
+  --tp-bd-thickness: 0.25ch;
+  --tp-bd-wideness: 100%;
 }
 
 /**********************************************************/
@@ -18,8 +21,9 @@
 /**********************************************************/
 
 .top-bar {
-  position: absolute;
+  position: fixed;
   top: 0;
+  width: 100%;
 
   display: flex;
   justify-content: space-between;
@@ -29,6 +33,7 @@
   padding-inline: var(--spacing-sm);
 
   background-color: var(--clr-bg-top-bar);
+  /* border-bottom: var(--tp-bd-thickness) solid var(--clr-bd-top-bar); */
 
   font-family: var(--ff-default);
   line-height: var(--lh-default);
@@ -36,6 +41,16 @@
   * {
     color: var(--clr-f-tp);
   }
+}
+
+.top-bar:after {
+  content: "";
+  background: var(--clr-bd-top-bar);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: var(--tp-bd-thickness);
+  width: var(--tp-bd-wideness);
 }
 
 .top-bar a {
