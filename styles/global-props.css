@@ -32,6 +32,9 @@
   --fs-summary: 1.6rem;
   --fs-link: 1.1rem;
 
+  --fs-heading--mobile: 2.5rem;
+  --fs-summary--mobile: 1.1rem;
+
   /* Text Line Heights */
   --lh-heading: 2.2rem;
   --lh-default: 1.6rem;
@@ -42,9 +45,9 @@
   /* Font Colors */
   --clr-f-heading: var(--accent-500);
   --clr-f-strong: var(--accent-900);
-  --clr-f-link: var(--accent-700);
-  --clr-f-link--hovered: var(--accent-800);
-  --clr-f-link--focused: var(--accent-900);
+  --clr-f-link: var(--text-700);
+  --clr-f-link--hovered: var(--text-800);
+  --clr-f-link--focused: var(--text-900);
   --clr-f-button: var(--primary-900);
   --clr-f-button--hovered: var(--text-50);
   --clr-f-button--focused: var(--text-50);
