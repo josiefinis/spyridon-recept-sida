@@ -191,7 +191,10 @@ a:focus {
   display: grid;
   gap: var(--spacing-rem-medium);
 
-  grid-template-columns: repeat(auto-fit, minmax(min(20rem), 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(10rem, 100vw, 25rem), 1fr)
+  );
 }
 
 .content-card {
@@ -235,8 +238,12 @@ a:focus {
   align-items: center;
   justify-items: center;
 
+  grid-template-columns: clamp(1fr, 100vw, 2fr) 1fr;
+
   background-color: var(--clr-bg-card);
   border-radius: var(--border-rounded-md);
+
+  min-height: 45rem;
 
   .content-card__preview {
     order: -1;
@@ -246,6 +253,9 @@ a:focus {
     object-fit: cover;
     width: 100%;
     height: 100%;
+
+    border-start-start-radius: var(--border-rounded-md);
+    border-end-start-radius: var(--border-rounded-md);
   }
 
   .content-card__text {
@@ -254,6 +264,7 @@ a:focus {
     align-items: center;
 
     padding-block: var(--spacing-rem-small);
+    padding-inline-end: var(--spacing-rem-small);
   }
 
   .content-card__button {
@@ -261,11 +272,14 @@ a:focus {
   }
 }
 
-@container content (width < 650px) {
+@container content (width < 1150px) {
   .featured-card {
     height: 60cqh;
+    display: grid;
     justify-items: center;
     align-items: center;
+
+    grid-template-columns: inherit;
     grid-template-areas: "featured-card";
 
     .content-card__preview {

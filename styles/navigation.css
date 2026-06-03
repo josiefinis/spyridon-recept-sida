@@ -70,6 +70,8 @@
   font-size: var(--fs-subheading);
 
   flex: 1;
+
+  text-wrap: no-wrap;
 }
 
 .top-bar__navigation {
@@ -84,3 +86,4 @@
   flex: 1;
   text-align: end;
 }
+
