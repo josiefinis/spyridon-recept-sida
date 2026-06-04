@@ -31,6 +31,7 @@
   --fs-subheading: clamp(1.3rem, 3vw, 1.5rem);
   --fs-summary: 1.6rem;
   --fs-link: clamp(0.8rem, 2vw, 1.1rem);
+  --fs-form-placeholder: 1.25ch;
 
   --fs-heading--mobile: 2.5rem;
   --fs-summary--mobile: 1.1rem;
@@ -130,7 +131,7 @@ a:focus {
   color: var(--clr-f-button);
   background-color: var(--clr-bg-button);
 
-  border-radius: var(--border-rounded-sm);
+  border-radius: var(--border-rounded-xs);
   padding-inline: var(--spacing-sm);
   padding-block: var(--spacing-xs);
 }
@@ -147,4 +148,15 @@ a:focus {
 
   color: var(--clr-f-button--focused);
   background-color: var(--clr-bg-button--focused);
+}
+
+.u-forms-field {
+  display: grid;
+  justify-items: start;
+
+  > label {
+    font-weight: var(--fw-bold);
+    font-style: italic;
+    color: var(--text-800);
+  }
 }

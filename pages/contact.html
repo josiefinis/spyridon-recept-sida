@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="sv-SE">
   <link rel="stylesheet" href="../styles/config/reset.css" />
-  <link rel="stylesheet" href="../styles/pages/recipe.css" />
+  <link rel="stylesheet" href="../styles/pages/contact.css" />
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -54,11 +54,18 @@
               >Få de senaste nyheterna, recepten och uppdateringarna direkt till
               din inkorg.
             </span>
-            <form action="#" method="post">
-              <div class="contact-newsletter u-forms-group">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" name="email" required />
+            <form action="#" method="post" class="contact-newsletter">
+              <div class="u-forms-field">
+                <label for="email" class="form-label"
+                  ><input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="Ex: janedoe@example.com"
+                /></label>
               </div>
+              <a href="#" type="submit" class="u-button">Bekräfta</a>
             </form>
           </section>
           <section aria-labelledby="instr-title" class="content-section">
@@ -70,8 +77,8 @@
               dig.</span
             >
             <address class="contact-info">
-              Lexicon<br />
-              Recept-lexicon<br />
+              <p>Lexicon</p>
+              <p>Recept-lexicon</p>
               <a href="tel:+46123456789">012-345 67 89</a><br />
               <a href="mailto:info@example.com">info@example.com</a>
             </address>

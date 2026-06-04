@@ -24,7 +24,7 @@
   --content-summary-spacing: 1rem;
 
   --content-examples-clt-gap: 0.5rem;
-  --content-examples-clt-height: 20rem;
+  --content-examples-clt-height: 25rem;
 
   --bs-offset-content: 0.15ch 0.15ch 0.2rem;
 }
@@ -97,7 +97,10 @@
 
 .content-section__collection {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(5rem, 100vw, 25rem), 1fr)
+  );
   gap: var(--content-examples-clt-gap);
   padding-block-start: var(--spacing-xs);
 
@@ -126,21 +129,8 @@
     padding-bottom: 0;
   }
 
-  .top-bar {
-    display: inline-flex;
-  }
-
-  .top-bar__logo {
-    flex-shrink: 3;
-  }
-
-  .top-bar__login {
-    padding-inline: 0.75rem 0;
-  }
-
   .content-section__collection {
-    grid-template-columns: 1fr;
     gap: 1rem;
-    padding: 1rem 1rem 1rem 0rem;
+    grid-template-columns: inherit;
   }
 }

@@ -91,23 +91,34 @@
   padding-block-end: var(--spacing-xs);
 }
 
-.content-section--examples {
-  padding-block: var(--spacing-md);
-}
+.contact-newsletter {
+  display: flex;
+  justify-items: start;
+  gap: 0.5rem;
 
-.content-section__collection {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--content-examples-clt-gap);
-  padding-block-start: var(--spacing-xs);
+  margin-block-start: var(--spacing-md);
+  margin-inline-start: var(--spacing-sm);
 
-  img {
-    display: inline-block;
-    object-fit: cover;
-    width: 100%;
-    height: var(--content-examples-clt-height);
+  > .u-button {
+    padding-inline: var(--spacing-xs);
+    padding-block: 0.1rem;
+  }
+
+  label {
+    font-weight: inherit;
+    font-size: var(--fs-form-placeholder);
+  }
+
+  label > input {
+    width: clamp(12rem, 3vw, 100%);
   }
 }
+
+.contact-info {
+  margin-block: var(--spacing-md);
+  margin-inline-start: var(--spacing-sm);
+}
+
 /**********************************************************/
 /*                     Media Query                        */
 /**********************************************************/
