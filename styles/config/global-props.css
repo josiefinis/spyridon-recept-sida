@@ -27,8 +27,8 @@
   --fw-bolder: bolder;
 
   /* Font Sizes */
-  --fs-heading: clamp(1.3rem, 3vw, 3rem);
-  --fs-subheading: clamp(1.3rem, 3vw, 2rem);
+  --fs-heading: clamp(1.8rem, 3vw, 2.5rem);
+  --fs-subheading: clamp(1.3rem, 3vw, 1.5rem);
   --fs-summary: 1.6rem;
   --fs-link: clamp(0.8rem, 2vw, 1.1rem);
 
@@ -43,8 +43,9 @@
   --ls-indentation: 1.1rem;
 
   /* Font Colors */
-  --clr-f-heading: var(--accent-500);
-  --clr-f-strong: var(--accent-900);
+  --clr-f-heading: var(--text-800);
+  --clr-f-subheading: var(--text-600);
+  --clr-f-strong: var(--text-800);
   --clr-f-link: var(--text-700);
   --clr-f-link--hovered: var(--text-800);
   --clr-f-link--focused: var(--text-900);
@@ -73,12 +74,20 @@ h2,
 h3 {
   font-family: var(--ff-heading);
   font-weight: var(--fw-bolder);
-  font-size: var(--fs-subheading);
 
   line-height: var(--lh-heading);
   padding-bottom: var(--spacing-sm);
+}
 
-  color: var(--text-800);
+h1 {
+  font-size: var(--fs-heading);
+  color: var(--clr-f-heading);
+}
+
+h2,
+h3 {
+  font-size: var(--fs-subheading);
+  color: var(--clr-f-subheading);
 }
 
 strong {
@@ -123,7 +132,7 @@ a:focus {
 
   border-radius: var(--border-rounded-sm);
   padding-inline: var(--spacing-sm);
-  padding-block: var(--spacing-xs)
+  padding-block: var(--spacing-xs);
 }
 
 .u-button:hover {
