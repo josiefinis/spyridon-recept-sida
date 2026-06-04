@@ -1,0 +1,61 @@
+:root {
+  --text-50: oklch(96.96% 0.013 185.1);
+  --text-100: oklch(94.02% 0.025 184.25);
+  --text-200: oklch(88.28% 0.051 182.38);
+  --text-300: oklch(82.54% 0.074 181.66);
+  --text-400: oklch(77.2% 0.095 179.94);
+  --text-500: oklch(71.97% 0.111 178.42);
+  --text-600: oklch(61.19% 0.093 178.29);
+  --text-700: oklch(49.68% 0.074 178.93);
+  --text-800: oklch(37.71% 0.054 178.87);
+  --text-900: oklch(24.43% 0.03 180.95);
+  --text-950: oklch(17.44% 0.018 182.62);
+
+  --background-50: oklch(97.04% 0.012 184.09);
+  --background-100: oklch(93.99% 0.025 181.26);
+  --background-200: oklch(88.1% 0.049 181.87);
+  --background-300: oklch(82.31% 0.072 180.29);
+  --background-400: oklch(76.75% 0.093 179.47);
+  --background-500: oklch(71.44% 0.109 177.37);
+  --background-600: oklch(60.68% 0.091 177.85);
+  --background-700: oklch(49.38% 0.073 177.47);
+  --background-800: oklch(37.42% 0.053 178.42);
+  --background-900: oklch(24.39% 0.031 177.61);
+  --background-950: oklch(17.06% 0.017 181.72);
+
+  --primary-50: oklch(97.02% 0.013 196.95);
+  --primary-100: oklch(94.24% 0.026 190.88);
+  --primary-200: oklch(88.64% 0.052 191.7);
+  --primary-300: oklch(83.19% 0.075 190.48);
+  --primary-400: oklch(78% 0.095 189.38);
+  --primary-500: oklch(73.16% 0.109 188.96);
+  --primary-600: oklch(62.07% 0.091 188.47);
+  --primary-700: oklch(50.5% 0.073 188.88);
+  --primary-800: oklch(38.22% 0.053 189.68);
+  --primary-900: oklch(24.81% 0.031 188.4);
+  --primary-950: oklch(17.48% 0.018 189.02);
+
+  --secondary-50: oklch(95.31% 0.013 5.81);
+  --secondary-100: oklch(90.69% 0.028 6.69);
+  --secondary-200: oklch(81.4% 0.059 7.73);
+  --secondary-300: oklch(72.23% 0.092 10.04);
+  --secondary-400: oklch(63.48% 0.127 11.94);
+  --secondary-500: oklch(55.57% 0.16 15.12);
+  --secondary-600: oklch(47.36% 0.134 14.98);
+  --secondary-700: oklch(38.79% 0.106 14.78);
+  --secondary-800: oklch(29.76% 0.076 13.23);
+  --secondary-900: oklch(20.02% 0.042 11.67);
+  --secondary-950: oklch(14.83% 0.022 13.96);
+
+  --accent-50: oklch(97.2% 0.013 97.44);
+  --accent-100: oklch(94.27% 0.026 92.4);
+  --accent-200: oklch(88.53% 0.052 92.58);
+  --accent-300: oklch(82.81% 0.077 92.62);
+  --accent-400: oklch(77.32% 0.101 93.23);
+  --accent-500: oklch(71.68% 0.119 92.23);
+  --accent-600: oklch(60.93% 0.1 92.5);
+  --accent-700: oklch(49.45% 0.079 91.71);
+  --accent-800: oklch(37.51% 0.057 91.92);
+  --accent-900: oklch(24.51% 0.033 92.3);
+  --accent-950: oklch(17.36% 0.018 92.28);
+}

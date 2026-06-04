@@ -1,0 +1,162 @@
+:root {
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Sizes */
+  --size-full: 100%;
+  --size-half: 50%;
+  --size-third: 33.33%;
+
+  /* Border Round */
+  --border-rounded-xs: 0.25rem;
+  --border-rounded-sm: 0.5rem;
+  --border-rounded-md: 1rem;
+  --border-rounded-lg: 1.5rem;
+  --border-rounded-xl: 2rem;
+
+  /* Font Family */
+  --ff-default: "DM Sans", sans-serif;
+  --ff-heading: var(--ff-default);
+
+  /* Font Weights */
+  --fw-bold: bold;
+  --fw-bolder: bolder;
+
+  /* Font Sizes */
+  --fs-heading: clamp(1.8rem, 3vw, 2.5rem);
+  --fs-subheading: clamp(1.3rem, 3vw, 1.5rem);
+  --fs-summary: 1.6rem;
+  --fs-link: clamp(0.8rem, 2vw, 1.1rem);
+  --fs-form-placeholder: 1.25ch;
+
+  --fs-heading--mobile: 2.5rem;
+  --fs-summary--mobile: 1.1rem;
+
+  /* Text Line Heights */
+  --lh-heading: 2.2rem;
+  --lh-default: 1.6rem;
+
+  /* Lists */
+  --ls-indentation: 1.1rem;
+
+  /* Font Colors */
+  --clr-f-heading: var(--text-800);
+  --clr-f-subheading: var(--text-600);
+  --clr-f-strong: var(--text-800);
+  --clr-f-link: var(--text-700);
+  --clr-f-link--hovered: var(--secondary-700);
+  --clr-f-link--focused: var(--secondary-800);
+  --clr-f-button: var(--primary-900);
+  --clr-f-button--hovered: var(--text-50);
+  --clr-f-button--focused: var(--text-50);
+  --clr-f-tp: var(--text-300);
+
+  /* Background Colors */
+  --clr-bg-button: var(--primary-300);
+  --clr-bg-button--hovered: var(--secondary-300);
+  --clr-bg-button--focused: var(--secondary-500);
+}
+
+/**********************************************************/
+/*                     Global Settings                    */
+/**********************************************************/
+
+* {
+  font-family: var(--ff-default);
+  line-height: var(--lh-default);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-bolder);
+
+  line-height: var(--lh-heading);
+  padding-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: var(--fs-heading);
+  color: var(--clr-f-heading);
+}
+
+h2,
+h3 {
+  font-size: var(--fs-subheading);
+  color: var(--clr-f-subheading);
+}
+
+strong {
+  font-weight: var(--fw-bold);
+  color: var(--clr-f-strong);
+}
+
+body {
+  background-color: var(--clr-bg-body);
+}
+
+ol[role="list"],
+ul[role="list"] {
+  line-height: var(--lh-default);
+  padding-inline-start: var(--ls-indentation);
+}
+
+a {
+  color: var(--clr-f-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--clr-f-link--hovered);
+  text-decoration: underline;
+}
+
+a:focus {
+  color: var(--clr-f-link--focused);
+  text-decoration: underline;
+}
+
+/**********************************************************/
+/*                     Utility                            */
+/**********************************************************/
+
+.u-button {
+  text-decoration: none;
+
+  color: var(--clr-f-button);
+  background-color: var(--clr-bg-button);
+
+  border-radius: var(--border-rounded-xs);
+  padding-inline: var(--spacing-sm);
+  padding-block: var(--spacing-xs);
+}
+
+.u-button:hover {
+  text-decoration: none;
+
+  color: var(--clr-f-button--hovered);
+  background-color: var(--clr-bg-button--hovered);
+}
+
+.u-button:focus {
+  text-decoration: none;
+
+  color: var(--clr-f-button--focused);
+  background-color: var(--clr-bg-button--focused);
+}
+
+.u-forms-field {
+  display: grid;
+  justify-items: start;
+
+  > label {
+    font-weight: var(--fw-bold);
+    font-style: italic;
+    color: var(--text-800);
+  }
+}

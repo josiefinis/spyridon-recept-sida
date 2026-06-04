@@ -1,6 +1,7 @@
-@import "global-props.css";
-@import "theme.css";
-@import "navigation.css";
+@import "../config/global-props.css";
+@import "../config/theme.css";
+@import "../elements/top-banner.css";
+@import "../elements/bottom-footer.css";
 
 /**********************************************************/
 /*                     Variables                          */
@@ -8,9 +9,10 @@
 
 :root {
   /* Background Colors */
-  --clr-bg-body: var(--background-400);
-  --clr-bg-page: var(--background-100);
+  --clr-bg-body: var(--background-200);
+  --clr-bg-page: var(--background-50);
   --clr-bg-callout: var(--background-200);
+  --clr-bd-content: var(--background-500);
 
   /* Content */
   --content-max-width: 60rem;
@@ -22,58 +24,9 @@
   --content-summary-spacing: 1rem;
 
   --content-examples-clt-gap: 0.5rem;
-  --content-examples-clt-height: 20rem;
+  --content-examples-clt-height: 25rem;
 
-  --content-shadow: 2px solid var(--background-300);
-}
-
-/**********************************************************/
-/*                     Global Settings                    */
-/**********************************************************/
-* {
-  font-family: var(--ff-default);
-  line-height: var(--lh-default);
-}
-
-h1,
-h2,
-h3 {
-  font-family: var(--ff-heading);
-  font-weight: var(--fw-bolder);
-  font-size: var(--fs-subheading);
-
-  line-height: var(--lh-heading);
-  padding-bottom: var(--spacing-sm);
-}
-
-strong {
-  font-weight: var(--fw-bold);
-  color: var(--clr-f-strong);
-}
-
-body {
-  background-color: var(--clr-bg-body);
-}
-
-ol[role="list"],
-ul[role="list"] {
-  line-height: var(--lh-default);
-  padding-inline-start: var(--ls-indentation);
-}
-
-a {
-  color: var(--clr-f-link);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--clr-f-link--hovered);
-  text-decoration: underline;
-}
-
-a:focus {
-  color: var(--clr-f-link--focused);
-  text-decoration: underline;
+  --bs-offset-content: 0.15ch 0.15ch 0.2rem;
 }
 
 /**********************************************************/
@@ -94,6 +47,9 @@ a:focus {
 
   max-width: var(--content-max-width);
   background-color: var(--clr-bg-page);
+
+  /*Tested shadows out - Spyro*/
+  /* box-shadow: var(--bs-offset-content) var(--clr-bd-content); */
 }
 
 .content > *:not(.content-banner) {
@@ -112,7 +68,6 @@ a:focus {
 
 .content-heading {
   margin-top: var(--spacing-lg);
-  color: var(--clr-f-heading);
 }
 
 .content-summary {
@@ -142,7 +97,10 @@ a:focus {
 
 .content-section__collection {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(5rem, 100vw, 25rem), 1fr)
+  );
   gap: var(--content-examples-clt-gap);
   padding-block-start: var(--spacing-xs);
 
@@ -171,21 +129,8 @@ a:focus {
     padding-bottom: 0;
   }
 
-  .top-bar {
-    display: inline-flex;
-  }
-
-  .top-bar__logo {
-    flex-shrink: 3;
-  }
-
-  .top-bar__login {
-    padding-inline: 0.75rem 0;
-  }
-
   .content-section__collection {
-    grid-template-columns: 1fr;
     gap: 1rem;
-    padding: 1rem 1rem 1rem 0rem;
+    grid-template-columns: inherit;
   }
 }

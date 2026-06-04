@@ -1,5 +1,5 @@
-@import "global-props.css";
-@import "theme.css";
+@import "../config/global-props.css";
+@import "../config/theme.css";
 
 /**********************************************************/
 /*                     Variables                          */
@@ -7,10 +7,13 @@
 
 :root {
   /* Background Colors */
-  --clr-bg-top-bar: var(--background-800);
+  --clr-bg-top-bar: var(--background-900);
+  --clr-bd-top-bar: var(--background-950);
 
   /* Top Bar */
   --tp-login-padding-inline: auto auto;
+  --tp-bd-thickness: 0.15ch;
+  --tp-bd-wideness: 100%;
 }
 
 /**********************************************************/
@@ -18,6 +21,10 @@
 /**********************************************************/
 
 .top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,25 +33,39 @@
   padding-inline: var(--spacing-sm);
 
   background-color: var(--clr-bg-top-bar);
+  /* border-bottom: var(--tp-bd-thickness) solid var(--clr-bd-top-bar); */
 
   font-family: var(--ff-default);
   line-height: var(--lh-default);
 
-  * {
+  z-index: 4;
+
+  > * {
     color: var(--clr-f-tp);
   }
 }
 
-.top-bar a {
-  font-size: var(--fs-link);
+.top-bar:after {
+  content: "";
+  background: var(--clr-bd-top-bar);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: var(--tp-bd-thickness);
+  width: var(--tp-bd-wideness);
 }
 
-.top-bar a:hover {
+.top-bar a:not(.u-button) {
+  font-size: var(--fs-link);
   color: var(--clr-f-tp);
 }
 
-.top-bar a:focus {
-  color: var(--primary-300);
+.top-bar a:not(.u-button):hover {
+  color: var(--clr-f-tp);
+}
+
+.top-bar a:not(.u-button):focus {
+  color: var(--primary-100);
 }
 
 .top-bar__logo {
@@ -52,6 +73,8 @@
   font-size: var(--fs-subheading);
 
   flex: 1;
+
+  text-wrap: no-wrap;
 }
 
 .top-bar__navigation {
@@ -66,3 +89,4 @@
   flex: 1;
   text-align: end;
 }
+
