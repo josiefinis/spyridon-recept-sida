@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="sv-SE">
-  <link rel="stylesheet" href="styles/reset.css" />
-  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="stylesheet" href="styles/config/reset.css" />
+  <link rel="stylesheet" href="styles/pages/index.css" />
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -14,19 +14,32 @@
     <title>Recept-Lexicon: Enkelt recept på pannkakor</title>
   </head>
   <body>
-    <header aria-labelledby="page-title" class="intro">
+    <div>
+      <nav aria-label="Navigation Bar" class="top-bar">
+        <span id="page-logo" class="top-bar__logo">Recept-lexicon</span>
+        <ul role="list" class="top-bar__navigation">
+          <li><a href="/index.html">Alla Recept</a></li>
+          <li><a href="#">Kontakt</a></li>
+          <li><a href="#">Om Sidan</a></li>
+        </ul>
+        <div class="top-bar__login">
+          <a href="#" class="u-button">Logga In</a>
+        </div>
+      </nav>
+    </div>
+    <div class="intro">
       <img
         src="https://picsum.photos/1920/1080?random=1"
         alt="Intro bild för recept-Lexicon"
         class="intro-preview"
       />
-      <div class="intro-header">
+      <header aria-labelledby="page-title" class="intro-header">
         <h1 id="page-title" class="intro-logo">Recept-Lexicon</h1>
         <span class="intro-summary"
           >Ett uppgiftsidan som innehåller olika enkla recepter.
         </span>
       </div>
-    </header>
+    </div>
     <main class="content">
       <header class="content-header">
         <h2 class="content-heading">Senaste recepter</h2>

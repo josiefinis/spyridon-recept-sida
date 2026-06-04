@@ -1,14 +1,16 @@
-@import "global-props.css";
-@import "theme.css";
+@import "../config/global-props.css";
+@import "../config/theme.css";
+@import "../elements/top-banner.css";
+@import "../elements/bottom-footer.css";
 
-/* Import Custom Properties */
-@import url("styles/custom-props.css");
 
 :root {
   --h-page-intro: 100vh;
 
-  --clr-bg-body: var(--background-400);
-  --clr-bg-card: var(--background-100);
+  /* Colors */
+  --clr-bg-body: var(--background-200);
+  --clr-bg-card: var(--background-300);
+  --clr-bd-card: var(--background-500);
 
   /* Spacing */
   --spacing-rem-small: 1.5rem;
@@ -18,87 +20,13 @@
 
   /* Filter Brightness */
   --filter-brightness-medium: 25%;
+
+  /* Box shadow offset*/
+  --bs-offset-card: 0.15ch 0.15ch 0.2rem;
 }
 
-/**********************************************************/
-/*                     Global Settings                    */
-/**********************************************************/
 
-* {
-  font-family: var(--ff-default);
-  line-height: var(--lh-default);
-}
 
-h1,
-h2,
-h3 {
-  font-family: var(--ff-heading);
-  font-weight: var(--fw-bolder);
-  font-size: var(--fs-subheading);
-
-  line-height: var(--lh-heading);
-  padding-bottom: var(--spacing-sm);
-
-  color: var(--text-800);
-}
-
-strong {
-  font-weight: var(--fw-bold);
-  color: var(--clr-f-strong);
-}
-
-body {
-  background-color: var(--clr-bg-body);
-}
-
-ol[role="list"],
-ul[role="list"] {
-  line-height: var(--lh-default);
-  padding-inline-start: var(--ls-indentation);
-}
-
-a {
-  color: var(--clr-f-link);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--clr-f-link--hovered);
-  text-decoration: underline;
-}
-
-a:focus {
-  color: var(--clr-f-link--focused);
-  text-decoration: underline;
-}
-
-/**********************************************************/
-/*                     Utility                            */
-/**********************************************************/
-
-.u-button {
-  text-decoration: none;
-
-  color: var(--clr-f-button);
-  background-color: var(--clr-bg-button);
-
-  border-radius: var(--border-rounded-sm);
-  padding: var(--spacing-xs);
-}
-
-.u-button:hover {
-  text-decoration: none;
-
-  color: var(--clr-f-button--hovered);
-  background-color: var(--clr-bg-button--hovered);
-}
-
-.u-button:focus {
-  text-decoration: none;
-
-  color: var(--clr-f-button--focused);
-  background-color: var(--clr-bg-button--focused);
-}
 /**********************************************************/
 /*                     Blocks                             */
 /**********************************************************/
@@ -204,6 +132,7 @@ a:focus {
 
   background-color: var(--clr-bg-card);
   border-radius: var(--border-rounded-md);
+  box-shadow: var(--bs-offset-card) var(--clr-bd-card);
 
   > img {
     order: -1;
@@ -242,6 +171,7 @@ a:focus {
 
   background-color: var(--clr-bg-card);
   border-radius: var(--border-rounded-md);
+  box-shadow: var(--bs-offset-card) var(--clr-bd-card);
 
   min-height: 45rem;
 

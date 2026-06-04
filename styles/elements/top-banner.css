@@ -1,5 +1,5 @@
-@import "global-props.css";
-@import "theme.css";
+@import "../config/global-props.css";
+@import "../config/theme.css";
 
 /**********************************************************/
 /*                     Variables                          */
@@ -7,12 +7,12 @@
 
 :root {
   /* Background Colors */
-  --clr-bg-top-bar: var(--background-500);
-  --clr-bd-top-bar: var(--background-500);
+  --clr-bg-top-bar: var(--background-900);
+  --clr-bd-top-bar: var(--background-950);
 
   /* Top Bar */
   --tp-login-padding-inline: auto auto;
-  --tp-bd-thickness: 0.25ch;
+  --tp-bd-thickness: 0.15ch;
   --tp-bd-wideness: 100%;
 }
 
@@ -38,7 +38,9 @@
   font-family: var(--ff-default);
   line-height: var(--lh-default);
 
-  * {
+  z-index: 4;
+
+  > * {
     color: var(--clr-f-tp);
   }
 }
@@ -53,16 +55,17 @@
   width: var(--tp-bd-wideness);
 }
 
-.top-bar a {
+.top-bar a:not(.u-button) {
   font-size: var(--fs-link);
-}
-
-.top-bar a:hover {
   color: var(--clr-f-tp);
 }
 
-.top-bar a:focus {
-  color: var(--primary-300);
+.top-bar a:not(.u-button):hover {
+  color: var(--clr-f-tp);
+}
+
+.top-bar a:not(.u-button):focus {
+  color: var(--primary-100);
 }
 
 .top-bar__logo {
