@@ -3,14 +3,16 @@
 @import "../elements/top-banner.css";
 @import "../elements/bottom-footer.css";
 
-
 :root {
   --h-page-intro: 100vh;
 
   /* Colors */
   --clr-bg-body: var(--background-200);
-  --clr-bg-card: var(--background-300);
+  --clr-bg-card: var(--background-100);
   --clr-bd-card: var(--background-500);
+
+  --clr-bg-card--featured: var(--secondary-100);
+  --clr-bd-card--featured: var(--background-500);
 
   /* Spacing */
   --spacing-rem-small: 1.5rem;
@@ -24,8 +26,6 @@
   /* Box shadow offset*/
   --bs-offset-card: 0.15ch 0.15ch 0.2rem;
 }
-
-
 
 /**********************************************************/
 /*                     Blocks                             */
@@ -169,11 +169,26 @@
 
   grid-template-columns: clamp(1fr, 100vw, 2fr) 1fr;
 
-  background-color: var(--clr-bg-card);
+  background-color: var(--clr-bg-card--featured);
   border-radius: var(--border-rounded-md);
-  box-shadow: var(--bs-offset-card) var(--clr-bd-card);
+  box-shadow: var(--bs-offset-card) var(--clr-bd-card--featured);
 
   min-height: 45rem;
+
+  h3 {
+    color: var(--secondary-600);
+  }
+  .u-button {
+    background-color: var(--secondary-500);
+  }
+
+  .u-button:hover {
+    background-color: var(--secondary-600);
+  }
+
+  .u-button:focus {
+    background-color: var(--secondary-700);
+  }
 
   .content-card__preview {
     order: -1;
@@ -212,6 +227,18 @@
     grid-template-columns: inherit;
     grid-template-areas: "featured-card";
 
+    .u-button {
+      background-color: var(--secondary-500);
+    }
+
+    .u-button:hover {
+      background-color: var(--secondary-600);
+    }
+
+    .u-button:focus {
+      background-color: var(--secondary-700);
+    }
+
     .content-card__preview {
       grid-area: featured-card;
       filter: brightness(var(--filter-brightness-medium));
@@ -235,7 +262,7 @@
     }
 
     .content-card__header {
-      color: var(--primary-500);
+      color: var(--secondary-200);
     }
 
     .content-card__button {

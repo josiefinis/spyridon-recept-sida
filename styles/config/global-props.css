@@ -48,17 +48,17 @@
   --clr-f-subheading: var(--text-600);
   --clr-f-strong: var(--text-800);
   --clr-f-link: var(--text-700);
-  --clr-f-link--hovered: var(--text-800);
-  --clr-f-link--focused: var(--text-900);
+  --clr-f-link--hovered: var(--secondary-700);
+  --clr-f-link--focused: var(--secondary-800);
   --clr-f-button: var(--primary-900);
   --clr-f-button--hovered: var(--text-50);
   --clr-f-button--focused: var(--text-50);
   --clr-f-tp: var(--text-300);
 
   /* Background Colors */
-  --clr-bg-button: var(--background-300);
-  --clr-bg-button--hovered: var(--background-500);
-  --clr-bg-button--focused: var(--background-700);
+  --clr-bg-button: var(--primary-300);
+  --clr-bg-button--hovered: var(--secondary-300);
+  --clr-bg-button--focused: var(--secondary-500);
 }
 
 /**********************************************************/
